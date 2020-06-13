@@ -1,0 +1,57 @@
+Flow Reference
+**************
+What is the result of the GET request to /flights?
+payload-get ,payload-process, destination-process, requester-id-process, destination, requester-id
+
+Are the payload, variables, and attributes accessible in all of the flows in the Mule application?
+Yes
+
+Http Request
+************
+What is the result of a web client request to /flights?
+payload-get, payload-process, destination-process, requester-id-process, destination, requester-id, flight-date-return
+
+Are the payload, variables, and attributes accessible in all of the flows in the Mule application?
+No
+
+What data is accessible after crossing a connection boundary (with the HTTP Request)?
+attributes - modified
+payload      modified
+variables    not modified
+
+
+Http Request Process-flow
+**************************
+What is the result of the request to /flights?
+payload-get, payload-process, destination-process, requester-id-process, destination(null), requester-id(null), flight-date-return(null)
+
+Are the payload, variable, and attributes accessible throughout all flows called in the Mule application?
+No
+
+What data is preserved within the processData flow?
+payload
+
+What data is still accesible after completing Http Request operation?
+destnation Variable and requester-id variable
+
+Asynchronous
+*************
+What is the result of the request to /flights?
+payload get,payload process,destination process,requester-id process
+
+Are the payload, variable, and attributes accessible throughout all flows called in the Mule application?
+No
+
+What data is preserved within the processData flow?
+payload
+
+Environment Variable
+*********************
+What happens if you do not set -D-env=dev when you run the mule application?
+Error: Couldn't find configuration property value for key ${env} from properties provider environment properties
+if global property (env=dev)is not set.
+
+What happens if you instead try to use -D-env=stage when you run the mule application?
+Error: Couldn't find resource: stage-properties.yaml neither on classpath or in file system
+
+
