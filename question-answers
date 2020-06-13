@@ -21,7 +21,7 @@ variables    not modified
 
 
 Http Request Process-flow
-**************************
+*************************
 What is the result of the request to /flights?
 payload-get, payload-process, destination-process, requester-id-process, destination(null), requester-id(null), flight-date-return(null)
 
